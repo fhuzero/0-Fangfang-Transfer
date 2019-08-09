@@ -1,3 +1,12 @@
+# Chris Oh (cgo8)
+
+# OS DEPENDENCIES:
+# - fswebcam
+
+# raspberry pi!
+# [ETH] [cam1] [cam2]
+# [ETH] [keyb] [cam3]
+
 import time
 import os
 import threading
@@ -15,7 +24,8 @@ M = 0
 def capture(count, view):
 	print 'currently capturing ' + usb[view]
 	fname = 'M_' + str(count) + '_V_' + str(view) + '.jpg'
-	os.system('fswebcam ' + fname + ' -r ' + size + ' -d ' + usb[view] + ' -p YUYV')
+	loc = 'V_' + str(view) + "/" + fname
+	os.system('fswebcam ' + loc + ' -r ' + size + ' -d ' + usb[view] + ' -p YUYV')
 
 ## capture 3 cameras, leap motion
 def snap():
@@ -30,6 +40,9 @@ def snap():
 	#TODO - SEE LEAP MOTION SAMPLE
 
 
+for i in range(NUMBER_OF_CAMS):
+	os.system('mkdir V_' + str(i))
+
 for i in range(NUMBER_OF_MODELS):
 	print '-------------------capturing M = ' + str(i) + ' -------------------'
 	snap()
@@ -37,3 +50,12 @@ for i in range(NUMBER_OF_MODELS):
 	M += 1
 	raw_input("Press Enter to continue...")
 print '---------------------completed ' + str(NUMBER_OF_MODELS) + ' captures-----------------------'
+
+
+
+# TODO:
+# catch errors in pictures not taken
+# capture leap motion data
+# 	see https://developer-archive.leapmotion.com/documentation/python/devguide/Sample_Tutorial.html
+# matlab script call ?
+# naming convention
