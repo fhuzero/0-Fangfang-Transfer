@@ -8,5 +8,7 @@
  bcm2835-v4l2
  
  sudo apt install python-opencv
+ 
+ vncserver -geometry 1366x768
 
 https://zhuanlan.zhihu.com/p/46032511
