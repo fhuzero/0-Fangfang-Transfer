@@ -12,3 +12,5 @@
  vncserver -geometry 1366x768
 
 https://zhuanlan.zhihu.com/p/46032511
+
+https://www.bogotobogo.com/python/python_network_programming_server_client_file_transfer.php
