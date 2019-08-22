@@ -5,3 +5,8 @@
 
 [Leap Motion Python](https://developer-archive.leapmotion.com/documentation/python/index.html)
 
+Axis-Quar-Rotate
+1. [zhihu](https://zhuanlan.zhihu.com/p/45404840)
+
+
+
